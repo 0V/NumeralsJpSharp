@@ -10,9 +10,9 @@ using NumeralsJpSharp.Extensions;
 /// </summary>
 namespace NumeralsJpSharp.Core
 {
-    public class Calculator
+    public class Converter
     {
-        private Calculator()
+        private Converter()
         {
         }
 

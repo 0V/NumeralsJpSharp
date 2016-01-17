@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Calculator.cs" />
+    <Compile Include="Core\Converter.cs" />
     <Compile Include="Core\Definitions.cs" />
     <Compile Include="Core\StringTrimer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -15,14 +15,13 @@ namespace NumeralsJpSharp.Core.Tests
         [TestMethod()]
         public void ArabicToKanjiTest()
         {
-
-            Console.WriteLine(Calculator.ArabicToKanji("1145141919810810810810810810810810810810810810810810810"));
+            Console.WriteLine(Converter.ArabicToKanji("1145141919810810810810810810810810810810810810810810810810810810810810810810810810810810"));
         }
 
         [TestMethod()]
         public void ArabicToKanjiSmallTest()
         {
-            Console.WriteLine(Calculator.ArabicToKanjiSmall("6546"));
+            Console.WriteLine(Converter.ArabicToKanjiSmall("6546"));
 
         }
 
@@ -38,7 +37,7 @@ namespace NumeralsJpSharp.Core.Tests
                 "三十五万四千三百四十五"
             };
 
-            var result = Calculator.TrimArabicToKanji(test).ToList();
+            var result = Converter.TrimArabicToKanji(test).ToList();
 
             Assert.AreEqual(result.Count(), actual.Count());
 

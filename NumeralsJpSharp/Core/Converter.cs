@@ -31,18 +31,27 @@ namespace NumeralsJpSharp.Core
         public static string ArabicToKanji(string str)
         {
             var count = str.Length;
-            var chunks = str.Skip(count % 4).Chunk(4).ToList();
-            chunks.Insert(0, str.Take(count % 4));
+            int remnant = count % 4;
+            var chunks = str.Skip(remnant).Chunk(4).ToList();
+            if (remnant > 0)
+            {
+                chunks.Insert(0, str.Take(remnant));
+            }
             var sb = new StringBuilder();
 
-            var unit = count / 4;
+            var unit = count / 5;
 
             for (int i = 0; i <= unit; i++)
             {
-                sb.Append(ArabicToKanjiSmall(int.Parse(new string(chunks[i].ToArray()))));
-                sb.Append(Definitions.LargeFactors[unit - i]);
+                var small = ArabicToKanjiSmall(int.Parse(new string(chunks[i].ToArray())));
+                if (small != "")
+                {
+                    sb.Append(small);
+                    sb.Append(Definitions.LargeFactors[unit - i]);
+                }
             }
-            return sb.ToString();
+            var result = sb.ToString();
+            return result != "" ? result : "零";
         }
 
         public static string ArabicToKanjiSmall(int num)
@@ -70,11 +79,6 @@ namespace NumeralsJpSharp.Core
             var num = Convert.ToInt32(str);
 
             return ArabicToKanjiSmall(num);
-        }
-
-        public static string ArabicToKanjiSmall(IEnumerable<char> str)
-        {
-            throw new NotImplementedException("まって");
         }
 
         public static string KanjiToArabic(string str)

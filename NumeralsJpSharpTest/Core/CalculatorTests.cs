@@ -15,7 +15,7 @@ namespace NumeralsJpSharp.Core.Tests
         [TestMethod()]
         public void ArabicToKanjiTest()
         {
-            Console.WriteLine(Converter.ArabicToKanji("1145141919810810810810810810810810810810810810810810810810810810810810810810810810810810"));
+            Console.WriteLine(Converter.ArabicToKanji("1234567890123456789098765432109876543213918762419782438054198000002478615784652781625478"));
         }
 
         [TestMethod()]
